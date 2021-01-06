@@ -5,7 +5,6 @@ const app = express()
 const port = 3080
 
 app.use(bodyParser.json())
-app.use(express.static(path.join(__dirname, '../vue-app')))
 
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/api/works/:cate/:page', (req, res) => {

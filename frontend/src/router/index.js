@@ -12,6 +12,9 @@ const routes = [
   {
     path: "/",
     name: "Home",
+    meta: {
+      title: 'Trang chủ - Trang tuyển dụng LOCIFA'
+    },
     components: {
       header: AppHeader,
       default: Components,
@@ -32,6 +35,14 @@ const routes = [
 const router = new Router({
   mode: "history",
   routes,
+});
+
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title;
+  }
+  next();
 });
 
 export default router;

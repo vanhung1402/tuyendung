@@ -57,7 +57,6 @@ export default {
       pages: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       PAGES: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       workOutstanding: { titleWork: "", listWork: [] },
-      MAX_PAGE: 5,
     };
   },
   props: ["workCate"],
@@ -67,7 +66,7 @@ export default {
       let currentPage = this.currentPage;
 
       axios
-        .get("/api/works/" + workCate + '/' + currentPage)
+        .get("/api/works/" + workCate + "/" + currentPage)
         .then((res) => {
           this.workOutstanding.titleWork = res.data.titleWork;
           this.workOutstanding.listWork = res.data.listWork;
@@ -85,25 +84,31 @@ export default {
     handleReloadPagination() {
       let newPaginations = [];
       let lastPage = [...this.PAGES].pop();
+      const MAX_PAGE = 5
 
-      for (let i = 0; i < this.MAX_PAGE; i++) {
+      for (let i = 0; i < MAX_PAGE; i++) {
         newPaginations.push(i + 1);
       }
 
-      if (lastPage > this.MAX_PAGE) {
-        newPaginations[this.MAX_PAGE - 1] = lastPage;
-        newPaginations[2] = this.currentPage;
-        if (this.currentPage == 1) {
-          newPaginations[1] = 2;
-          newPaginations[this.MAX_PAGE - 2] = "...";
-          newPaginations[2] = 3;
-        } else if (this.currentPage == lastPage) {
-          newPaginations[1] = "...";
-          newPaginations[this.MAX_PAGE - 2] = lastPage - 1;
-          newPaginations[2] = lastPage - 2;
-        } else {
-          newPaginations[1] = "...";
-          newPaginations[this.MAX_PAGE - 2] = "...";
+      if (lastPage > MAX_PAGE) {
+        newPaginations[MAX_PAGE - 1] = lastPage;
+        switch (this.currentPage) {
+          case 1:
+          case 2:
+          case 3:
+            newPaginations[MAX_PAGE - 2] = "...";
+            break;
+          case lastPage:
+          case lastPage - 1:
+          case lastPage - 2:
+            newPaginations[1] = "...";
+            newPaginations[MAX_PAGE - 2] = lastPage - 1;
+            newPaginations[MAX_PAGE - 3] = lastPage - 2;
+            break;
+          default:
+            newPaginations[1] = "...";
+            newPaginations[MAX_PAGE - 2] = "...";
+            newPaginations[2] = this.currentPage;
         }
       }
 
@@ -120,7 +125,7 @@ export default {
 
 <style scoped>
 .section-header {
-  margin: 1vw 0;
+  margin: 1.5vw 0;
   font-weight: bold;
   display: flex;
   align-items: center;
