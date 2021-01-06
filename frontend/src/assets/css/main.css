@@ -1,0 +1,14 @@
+.custom-padding{
+    padding: 15px 75px;
+}
+
+@media screen and (max-width: 992px) {
+    .custom-padding{
+        padding: 5px 25px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .custom-padding{
+        padding: 5px 10px;
+    }
+}
