@@ -16,7 +16,7 @@
     <b-collapse id="navbar-toggle-collapse" is-nav>
       <b-navbar-nav class="ml-auto">
         <b-nav-item href="#">
-          <b-icon-house-fill></b-icon-house-fill> Home</b-nav-item
+          <b-icon-house-fill></b-icon-house-fill> Trang chủ</b-nav-item
         >
         <!-- Navbar dropdowns -->
         <b-nav-item-dropdown right>
@@ -32,10 +32,6 @@
         <b-nav-item href="#"
           ><b-icon-person-badge-fill></b-icon-person-badge-fill> Việc làm quản
           lý</b-nav-item
-        >
-        <b-nav-item href="#"
-          ><b-icon-bookmark-star-fill></b-icon-bookmark-star-fill> Khóa
-          học</b-nav-item
         >
         <b-nav-item href="#"
           ><b-icon-building></b-icon-building> Công ty</b-nav-item

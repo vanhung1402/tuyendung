@@ -13,7 +13,7 @@ const routes = [
     path: "/",
     name: "Home",
     meta: {
-      title: 'Trang chủ - Trang tuyển dụng LOCIFA'
+      title: 'Trang tuyển dụng LOCIFA | Trang chủ'
     },
     components: {
       header: AppHeader,
