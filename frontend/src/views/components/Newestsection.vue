@@ -10,9 +10,11 @@
       </span>
     </div>
     <div class="section-body">
-      <div class="row no-gutters">
-				<Newspost class="col-md-4"></Newspost>
-			</div>
+      <div class="row no-gutters posts">
+        <div class="post-container" v-for="post in 3" :key="post">
+          <Newspost></Newspost>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -25,6 +27,15 @@ export default {
 };
 </script>
 <style scoped>
+.posts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.post-container {
+  width: 32%;
+  margin-bottom: 1em;
+}
 .section-header {
   margin: 1.5vw 0;
   font-weight: bold;
@@ -49,6 +60,9 @@ export default {
   }
   .section-view-all {
     font-size: 8pt;
+  }
+  .post-container {
+    width: 100%;
   }
 }
 </style>

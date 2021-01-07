@@ -41,6 +41,9 @@ export default {
 </script>
 
 <style scoped>
+section, .section{
+  margin-bottom: 1rem;
+}
 h2{
 	color: white;
 }
