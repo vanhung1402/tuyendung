@@ -1,12 +1,12 @@
 <template>
   <b-navbar toggleable="sm" variant="faded" type="light" class="custom-padding">
     <b-navbar-brand href="#">
-      <a href="/">
-        <img src="./../assets/img/header/logo.png" alt="Logo" />
+      <a href="/"
+        ><img src="./../assets/img/header/locifa.png" alt="Logo" />
       </a>
     </b-navbar-brand>
 
-    <b-navbar-toggle target="navbar-toggle-collapse">
+    <b-navbar-toggle target="navbar-toggle-collapse" id="btn-collape">
       <template #default="{ expanded }">
         <b-icon v-if="expanded" icon="chevron-bar-up"></b-icon>
         <b-icon v-else icon="chevron-bar-down"></b-icon>
@@ -48,10 +48,41 @@ export default {};
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-header .navbar-nav a.nav-link {
+header a {
   font-weight: bold;
-  color: #627199 !important;
+  color: #fff !important;
+}
+header .navbar-nav a.nav-link {
   text-decoration: none;
   font-size: 17px;
+}
+.nav-item:hover {
+    box-shadow: 0px 6px 0 0px #fff;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.nav-item:focus, .nav-link:focus{
+  outline: none;
+}
+#btn-collape {
+  color: #fff;
+  border: 1px solid #fff;
+}
+.dropdown-menu{
+  margin-top: 0px;
+  background-color: #FFF;
+  border-color: #FFF;
+  border-radius: 0px;
+}
+.dropdown-menu li a.dropdown-item{
+  color: #0066bf !important;
+}
+@media (max-width: 576px) {
+  .nav-item{
+    padding: 10px;
+  }
 }
 </style>

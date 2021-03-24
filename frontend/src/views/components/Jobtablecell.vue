@@ -59,7 +59,7 @@ export default {
 .table-body .table-cells .name-company {
   text-transform: uppercase;
   margin: 5px;
-  color: #4e9dbe;
+  color: #0d8abc;
   font-size: 10pt;
 }
 .table-body .table-cells .job-type span {
@@ -80,7 +80,7 @@ export default {
 .table-body .job-location,
 .table-body .job-expired,
 .table-body .job-salary {
-  color: #6ba2b9;
+  color: #444;
 }
 
 @media screen and (max-width: 768px) {

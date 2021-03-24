@@ -13,7 +13,7 @@ router.get('/works/:workType', (req, res) => {
         {
             _id: 1,
             img: 'company-logo01.jpg',
-            jobname: 'Web Designer needed',
+            jobname: 'Nhân viên Sale',
             companyname: 'Quick Studio',
             jobtype: 'parttime',
             joblocation: 'Minh Khai, HBT, Hà Nội',
@@ -23,7 +23,7 @@ router.get('/works/:workType', (req, res) => {
         {
             _id: 2,
             img: 'company-logo02.jpg',
-            jobname: 'Web Designer needed',
+            jobname: 'Nhân viên Marketing',
             companyname: 'Quick Studio',
             jobtype: 'fulltime',
             joblocation: 'Minh Khai, HBT, Hà Nội',
@@ -33,7 +33,7 @@ router.get('/works/:workType', (req, res) => {
         {
             _id: 3,
             img: 'company-logo01.jpg',
-            jobname: 'Web Designer needed',
+            jobname: 'Nhân viên Kế toán',
             companyname: 'Quick Studio',
             jobtype: 'fulltime',
             joblocation: 'Minh Khai, HBT, Hà Nội',
@@ -43,7 +43,7 @@ router.get('/works/:workType', (req, res) => {
         {
             _id: 4,
             img: 'company-logo01.jpg',
-            jobname: 'Web Designer needed',
+            jobname: 'Nhân viên CSKH',
             companyname: 'Quick Studio',
             jobtype: 'parttime',
             joblocation: 'Minh Khai, HBT, Hà Nội',
@@ -53,7 +53,7 @@ router.get('/works/:workType', (req, res) => {
         {
             _id: 5,
             img: 'company-logo01.jpg',
-            jobname: 'Web Designer needed',
+            jobname: 'Nhân viên HR',
             companyname: 'Quick Studio',
             jobtype: 'fulltime',
             joblocation: 'Minh Khai, HBT, Hà Nội',

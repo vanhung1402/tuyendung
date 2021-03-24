@@ -1,9 +1,9 @@
 <template>
   <section id="hero-section">
-    <img src="./../../assets/img/people.jpg" alt="Good job!" />
+    <img src="./../../assets/img/job.jpg" alt="Good job!" />
     <div class="center">
       <div class="center-content custom-padding">
-        <h1>Hơn 100,000 công việc đang chờ bạn.</h1>
+        <h1>Rất nhiều công việc đang chờ bạn.</h1>
         <form method="post">
           <div id="form-search">
             <div id="tenviec" class="col-md-6">
@@ -11,7 +11,7 @@
                 class="form-control"
                 type="text"
                 name="tenviec"
-                placeholder="Công việc / Từ khóa / Công ty..."
+                placeholder="Công việc / Từ khóa / Vị trí việc làm..."
                 autocomplete="off"
               />
             </div>
@@ -20,7 +20,7 @@
                 class="form-control"
                 type="text"
                 name="diadiem"
-                placeholder="Tỉnh thành / Mã bưu điện..."
+                placeholder="Địa điểm làm việc..."
               />
             </div>
             <div id="button" class="col-md-1">
@@ -31,9 +31,9 @@
           </div>
         </form>
         <div id="key-noibat" class="mt-2">
-          Từ khóa nổi bật: <a href="" class="popular-key">Web design</a
-          ><a href="" class="popular-key">Frontend developer</a
-          ><a href="" class="popular-key">Unknown</a>
+          Từ khóa nổi bật: <a href="" class="popular-key">Sale</a
+          ><a href="" class="popular-key">Maketing</a
+          ><a href="" class="popular-key">Kế toán</a>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@ h1 {
   padding: 5px 0;
 }
 #hero-section .center .center-content h1 {
-  color: #fff;
+  color: #000;
 }
 #form-search {
   flex-wrap: wrap;
@@ -74,15 +74,17 @@ h1 {
   padding: 0.5rem 0;
   border-radius: 5px;
 }
-#form-search #button {
-  text-align: right;
-}
 #form-search #button button {
-  background-color: #00e0ff;
-  border: 1px solid #324e7b;
-  color: #fff;
+  background-color: #39b49b;
+  border: 1px solid #39b49b;
+  color: #FFF;
   border-radius: 5px;
   font-size: 1.2vw;
+  transition: all ease .5s;
+}
+#form-search #button button:hover {
+  background-color: #FFF;
+  color: #39b49b;
 }
 #form-search input {
   font-size: 1.2vw;
@@ -92,13 +94,13 @@ h1 {
   padding: 0.5rem;
 }
 #key-noibat {
-  color: #fff;
+  color: #000;
   font-weight: bold;
   font-size: 1.5vw;
 }
 .popular-key {
   color: #fff;
-  background-color: #3d6cb9;
+  background-color: #39b49b;
   margin: 0 0.3vw;
   border-radius: 0.5vw;
   padding: 0.5vw;

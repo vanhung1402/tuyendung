@@ -34,7 +34,7 @@ export default {
 .table-header {
   text-transform: uppercase;
   font-size: 10pt;
-  color: #0d8abc;
+  color: #0066bf;
   font-weight: bold;
 }
 .table-cells {

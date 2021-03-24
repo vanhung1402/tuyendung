@@ -3,7 +3,7 @@
     <div class="custom-padding">
       <div class="top flex space-between items-center">
         <img
-          src="./../../public/img/header/logo.png"
+          src="./../../public/img/header/locifa.png"
           alt="footer-logo"
           class="img-responsive"
         />
@@ -18,7 +18,7 @@
       <div class="row middle">
         <div class="col-md-4 widget">
           <h5 class="widget-title">Địa chỉ</h5>
-          <p>Phòng 1706 - Tòa nhà CT2 Nàng Hương, 583 Nguyễn Trãi, Hà Nội</p>
+          <p>86 Lê Trọng Tấn, Khương Mai, Thanh Xuân, Hà Nội</p>
         </div>
         <div class="col-md-4 widget">
           <h5 class="widget-title">Liên hệ</h5>
@@ -40,7 +40,7 @@
       <div class="bottom flex space-between items-center">
         <p class="copyright-text small">
           © 2021 <a href="#0">Locifa</a>. All Rights Reserved. Designed by
-          <a href="#0">FFC Team</a>.
+          <a href="#0">Bùi Văn Hùng</a>.
         </p>
         <!-- end .copyright-menu -->
       </div>
@@ -67,7 +67,7 @@ footer {
   position: relative;
 }
 .footer .top a {
-  color: #a0a7ba;
+  color: #EEE;
   font-weight: bold;
 }
 .space-between {
@@ -81,7 +81,7 @@ footer {
   align-items: center;
 }
 .widget {
-  color: #a0a7ba;
+  color: #EEE;
 }
 .widget .widget-title {
   text-transform: uppercase;
@@ -109,10 +109,10 @@ footer {
   text-transform: uppercase;
 }
 .copyright-text {
-  color: #627199;
+  color: #CCC;
 }
 .footer .bottom a{
-  color: #a0a7ba;
+  color: #EEE;
 }
 @media screen and (max-width: 768px) {
 	.footer-menu{

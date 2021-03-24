@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import AppHeader from '@/layout/AppHeader'
 import AppFooter from '@/layout/AppFooter'
 import Components from '@/views/Components.vue'
+import SubmitProfile from '@/views/SubmitProfile'
 import About from '@/views/About.vue'
 
 Vue.use(Router)
@@ -27,6 +28,15 @@ const routes = [
     components: {
       header: AppHeader,
       default: About,
+      footer: AppFooter,
+    },
+  },
+  {
+    path: "/nop-ho-so",
+    name: "SubmitProfile",
+    components: {
+      header: AppHeader,
+      default: SubmitProfile,
       footer: AppFooter,
     },
   },
