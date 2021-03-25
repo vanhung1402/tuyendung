@@ -5,7 +5,6 @@ import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import Mixins from './plugins/mixins'
 import VueFileAgent from 'vue-file-agent'
 import 'vue-file-agent/dist/vue-file-agent.css'
-import { DatePickerPlugin } from '@syncfusion/ej2-vue-calendars'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
@@ -23,7 +22,6 @@ Vue.material.locale.shorterMonths = ['T.1', 'T.2', 'T.3', 'T.4', 'T.5', 'T.6', '
 Vue.material.locale.startYear = 1970
 Vue.material.locale.endYear = new Date().getFullYear()
 
-Vue.use(DatePickerPlugin)
 Vue.use(VueFileAgent)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)

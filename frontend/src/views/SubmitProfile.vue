@@ -14,13 +14,14 @@ export default {
       fileRecordsForUpload: [],
       uploadUrl: "http://localhost/upload-server/php/upload-server.php",
       uploadHeaders: { "X-Test-Header": "vue-file-agent" },
+      viTriTuyenDung: "Nhân viên sale",
       form: {
-        sHoten: "",
-        dNgaysinh: new Date().setFullYear(new Date().getFullYear() - 18),
-        bGioitinh: true,
-        sDienthoai: "",
-        sEmail: "",
-        sDiachi: "",
+        sHotenUngvien: "",
+        dNgaysinhUngvien: new Date().setFullYear(new Date().getFullYear() - 18),
+        bGioitinhUngvien: true,
+        sDienthoaiUngvien: "",
+        sEmailUngvien: "",
+        sDiachiUngvien: "",
       },
     };
   },
@@ -40,6 +41,12 @@ export default {
       if (!this.$v.$invalid) {
         console.log(this.form);
       }
+
+      this.saveRecruitmentProfile()
+    },
+    saveRecruitmentProfile(){
+      let newRecruitmentProfile = {...this.form}
+      console.log(newRecruitmentProfile)
     },
     getValidationClass(fieldName) {
       const field = this.$v.form[fieldName];
@@ -82,41 +89,42 @@ export default {
   },
   validations: {
     form: {
-      sHoten: {
+      sHotenUngvien: {
         required,
         minLength: minLength(3),
       },
-      sDienthoai: {
+      sDienthoaiUngvien: {
         required,
         minLength: minLength(10),
         maxLength: maxLength(12),
       },
-      sEmail: {
+      sEmailUngvien: {
         required,
         email,
       },
-      sDiachi: {
+      sDiachiUngvien: {
         required,
         minLength: minLength(10),
-      }
+      },
     },
   },
 };
 </script>
 <template>
   <div class="container">
+    <h4 class="text-center text-uppercase">Nộp hồ sơ tuyển dụng: {{ viTriTuyenDung }}</h4>
     <form novalidate class="md-layout" @submit.prevent="validateProfile">
       <div class="row">
         <div class="col-md-6 form-group">
-          <md-field :class="getValidationClass('sHoten')">
+          <md-field :class="getValidationClass('sHotenUngvien')">
             <label for="ho-ten"
               >Họ và tên <span class="text-danger">*</span></label
             >
-            <md-input id="ho-ten" v-model="form.sHoten"></md-input>
-            <span class="md-error" v-if="!$v.form.sHoten.required"
+            <md-input id="ho-ten" v-model="form.sHotenUngvien"></md-input>
+            <span class="md-error" v-if="!$v.form.sHotenUngvien.required"
               >Họ và tên trống</span
             >
-            <span class="md-error" v-else-if="!$v.form.sHoten.minlength"
+            <span class="md-error" v-else-if="!$v.form.sHotenUngvien.minlength"
               >Họ và tên phải nhiều hơn 3 ký tự</span
             >
           </md-field>
@@ -124,12 +132,12 @@ export default {
         <div class="col-md-3 form-group">
           <md-datepicker
             id="ngay-sinh"
-            v-model="form.dNgaysinh"
+            v-model="form.dNgaysinhUngvien"
             :md-immediately="true"
             :required="true"
             :class="
-              getDateValidationClass(form.dNgaysinh, Date.now(), '<') &&
-              form.dNgaysinh
+              getDateValidationClass(form.dNgaysinhUngvien, Date.now(), '<') &&
+              form.dNgaysinhUngvien
                 ? ''
                 : 'md-invalid'
             "
@@ -137,59 +145,61 @@ export default {
             <label for="ngay-sinh"
               >Ngày sinh <span class="text-danger">*</span></label
             >
-            <span class="md-error" v-if="!form.dNgaysinh">Ngày sinh trống</span>
+            <span class="md-error" v-if="!form.dNgaysinhUngvien">Ngày sinh trống</span>
             <span
               class="md-error"
-              v-if="!getDateValidationClass(form.dNgaysinh, Date.now(), '<')"
+              v-if="!getDateValidationClass(form.dNgaysinhUngvien, Date.now(), '<')"
               >Ngày sinh không hợp lệ</span
             >
           </md-datepicker>
         </div>
-        <div class="col-md-3 form-group">
-          <md-radio v-model="form.bGioitinh" :value="true" class="md-primary"
+        <div class="col-md-3 form-group row-flex">
+          <md-radio v-model="form.bGioitinhUngvien" :value="true" class="md-primary"
             >Nam</md-radio
           >
-          <md-radio v-model="form.bGioitinh" :value="false" class="md-primary"
+          <md-radio v-model="form.bGioitinhUngvien" :value="false" class="md-primary"
             >Nữ</md-radio
           >
         </div>
         <div class="col-md-6 form-group">
           <md-field>
             <label>Điện thoại <span class="text-danger">*</span></label>
-            <md-input v-model="form.sDienthoai"></md-input>
+            <md-input v-model="form.sDienthoaiUngvien"></md-input>
           </md-field>
         </div>
         <div class="col-md-6 form-group">
-          <md-field :class="getValidationClass('sEmail')">
+          <md-field :class="getValidationClass('sEmailUngvien')">
             <label for="email">Email <span class="text-danger">*</span></label>
             <md-input
               type="email"
               name="email"
               id="email"
               autocomplete="email"
-              v-model="form.sEmail"
+              v-model="form.sEmailUngvien"
             />
-            <span class="md-error" v-if="!$v.form.sEmail.required"
+            <span class="md-error" v-if="!$v.form.sEmailUngvien.required"
               >Email trống</span
             >
-            <span class="md-error" v-else-if="!$v.form.sEmail.email"
+            <span class="md-error" v-else-if="!$v.form.sEmailUngvien.email"
               >Email không hợp lệ</span
             >
           </md-field>
         </div>
         <div class="col-md-12 form-group">
-          <md-field :class="getValidationClass('sDiachi')">
-            <label for="dia-chi">Địa chỉ <span class="text-danger">*</span></label>
+          <md-field :class="getValidationClass('sDiachiUngvien')">
+            <label for="dia-chi"
+              >Địa chỉ <span class="text-danger">*</span></label
+            >
             <md-textarea
               id="dia-chi"
-              v-model="form.sDiachi"
+              v-model="form.sDiachiUngvien"
               md-autogrow
               md-counter="200"
             ></md-textarea>
-            <span class="md-error" v-if="!$v.form.sDiachi.required"
+            <span class="md-error" v-if="!$v.form.sDiachiUngvien.required"
               >Địa chỉ trống</span
             >
-            <span class="md-error" v-else-if="!$v.form.sDiachi.minlength"
+            <span class="md-error" v-else-if="!$v.form.sDiachiUngvien.minlength"
               >Địa chỉ phải nhiều hơn 10 ký tự</span
             >
           </md-field>
@@ -215,7 +225,7 @@ export default {
 </template>
 
 <style>
-.md-radio {
+.row-flex .md-radio {
   margin-top: 30px;
 }
 .row-flex {
